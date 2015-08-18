@@ -9,7 +9,7 @@ define('CONFIG_PATH',  realpath(ROOT_PATH . DIRECTORY_SEPARATOR . 'config'));
 define('STORAGE_PATH', realpath(ROOT_PATH . DIRECTORY_SEPARATOR . 'storage'));
 
 define('STORAGE_PATH_CACHE', realpath(STORAGE_PATH . DIRECTORY_SEPARATOR . 'cache'));
-define('STORAGE_PATH_LOG',   realpath(STORAGE_PATH . DIRECTORY_SEPARATOR . 'log'));
+define('STORAGE_PATH_LOG',   realpath(STORAGE_PATH . DIRECTORY_SEPARATOR . 'logs'));
 
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
