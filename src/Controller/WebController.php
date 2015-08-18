@@ -56,7 +56,7 @@ abstract class WebController
      *
      * @return string
      */
-    public function getDb($connection)
+    public function getDb($connection = '')
     {
         $app = $this->getApp();
 
