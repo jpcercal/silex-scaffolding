@@ -40,6 +40,9 @@
         ],
         "post-root-package-install": [
             "git init",
+            "mkdir -p storage/logs",
+            "mkdir -p storage/cache",
+            "chmod -Rf 777 storage/",
             "php -r \"copy('.env.example', '.env');\""
         ]
     }
