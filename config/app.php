@@ -3,7 +3,7 @@
 require CONFIG_PATH . DIRECTORY_SEPARATOR . 'dotenv.php';
 require CONFIG_PATH . DIRECTORY_SEPARATOR . 'helpers.php';
 
-use Cekurte\Silex\Provider\ApiControllerProvider;
+use Cekurte\Silex\Provider\DefaultControllerProvider;
 use Silex\Application;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\MonologServiceProvider;
@@ -28,6 +28,6 @@ $app->register(new TwigServiceProvider(),     require CONFIG_PATH . DIRECTORY_SE
 
 require CONFIG_PATH . DIRECTORY_SEPARATOR . 'error.php';
 
-$app->mount('/api', new ApiControllerProvider());
+$app->mount('/api', new DefaultControllerProvider());
 
 return $app;
