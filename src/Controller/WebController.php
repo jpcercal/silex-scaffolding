@@ -2,6 +2,7 @@
 
 namespace Cekurte\Silex\Controller;
 
+use Silex\Application;
 use Symfony\Component\HttpKernel\Exception\FatalErrorException;
 
 /**
@@ -10,13 +11,24 @@ use Symfony\Component\HttpKernel\Exception\FatalErrorException;
 abstract class WebController
 {
     /**
+     * @var Application
+     */
+    protected $app;
+
+    /**
+     * @param Application $app
+     */
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @return Silex\Application
      */
     public function getApp()
     {
-        global $app;
-
-        return $app;
+        return $this->app;
     }
 
     /**
