@@ -40,6 +40,8 @@
         ],
         "post-root-package-install": [
             "git init",
+            "mkdir -p storage/logs",
+            "mkdir -p storage/cache",
             "php -r \"copy('.env.example', '.env');\""
         ]
     }
