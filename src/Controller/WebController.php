@@ -79,8 +79,6 @@ abstract class WebController
             throw new FatalErrorException('The TwigServiceProvider is not registered in this application');
         }
 
-        $calledClass = explode('\\', get_called_class());
-
         return $app['twig']->render(sprintf('Resources/views/%s', $view), $params);
     }
 }
