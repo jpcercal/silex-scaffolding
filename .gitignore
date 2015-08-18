@@ -6,5 +6,5 @@ composer.phar
 .idea/
 *.sublime-*
 .env
-storage/log/
+storage/logs/
 storage/cache/
