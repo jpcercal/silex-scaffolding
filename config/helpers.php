@@ -34,6 +34,14 @@ class Helpers
             return false;
         }
 
+        if ($value === 'null') {
+            return null;
+        }
+
+        if (is_numeric($env)) {
+            return is_int($env) ? (int) $env : (float) $env;
+        }
+
         return $env;
     }
 }
