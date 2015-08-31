@@ -1,8 +1,5 @@
 <?php
 
-require CONFIG_PATH . DIRECTORY_SEPARATOR . 'dotenv.php';
-require CONFIG_PATH . DIRECTORY_SEPARATOR . 'helpers.php';
-
 use Cekurte\Silex\Provider\DefaultControllerProvider;
 use JDesrosiers\Silex\Provider\CorsServiceProvider;
 use Silex\Application;
