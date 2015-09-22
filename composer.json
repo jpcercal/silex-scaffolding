@@ -29,12 +29,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Cekurte\\Silex\\": "src/"
+            "App\\": "src/App/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Cekurte\\Silex\\Test\\": "test/"
+            "App\\Test\\": "test/App/"
         }
     },
     "minimum-stability": "stable",

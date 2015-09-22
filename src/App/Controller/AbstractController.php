@@ -1,14 +1,14 @@
 <?php
 
-namespace Cekurte\Silex\Controller;
+namespace App\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpKernel\Exception\FatalErrorException;
 
 /**
- * The base WebController
+ * AbstractController
  */
-abstract class WebController
+abstract class AbstractController
 {
     /**
      * @var Application
@@ -105,11 +105,12 @@ abstract class WebController
      * Render a view using the Twig Template Engine
      *
      * @param  string $view
-     * @param  array $params
+     * @param  array  $params
+     * @param  bool   $viewIsAbsolute
      *
      * @return string
      */
-    public function render($view, array $params = [])
+    public function render($view, array $params = [], $viewIsAbsolute = false)
     {
         $app = $this->getApp();
 
@@ -117,6 +118,21 @@ abstract class WebController
             throw new FatalErrorException('The TwigServiceProvider is not registered in this application');
         }
 
-        return $app['twig']->render(sprintf('Resources/views/%s', $view), $params);
+        if ($viewIsAbsolute === true) {
+            return $app['twig']->render($view, $params);
+        }
+
+        $namespace = explode('\\', get_class($this));
+
+        $path = '';
+
+        foreach ($namespace as $ns) {
+            if (stripos($ns, 'controller') !== false) {
+                break;
+            }
+            $path .= $ns . '\\';
+        }
+
+        return $app['twig']->render(sprintf('%s/Resources/views/%s', $path, $view), $params);
     }
 }

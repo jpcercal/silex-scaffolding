@@ -1,6 +1,7 @@
 <?php
 
-use Cekurte\Silex\Provider\DefaultControllerProvider;
+use App\Provider\ApiControllerProvider;
+use App\Provider\PageControllerProvider;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use JDesrosiers\Silex\Provider\CorsServiceProvider;
 use Silex\Application;
@@ -33,7 +34,8 @@ $app->register(new TwigServiceProvider(),    require CONFIG_PATH . DIRECTORY_SEP
 
 require CONFIG_PATH . DIRECTORY_SEPARATOR . 'error.php';
 
-$app->mount('/api', new DefaultControllerProvider());
+$app->mount('/',    new PageControllerProvider());
+$app->mount('/api', new ApiControllerProvider());
 
 $app->after($app["cors"]);
 

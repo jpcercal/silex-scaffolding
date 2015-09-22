@@ -121,6 +121,9 @@ $commands[] = new ValidateSchemaCommand();
 $commands[] = new InfoCommand();
 $commands[] = new MappingDescribeCommand();
 
+$commands[] = new App\Command\ImportMappingDoctrineCommand();
+end($commands)->setEntityManager($em);
+
 $cli->addCommands($commands);
 
 // Register All Doctrine DBAL Commands
