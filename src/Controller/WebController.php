@@ -50,13 +50,13 @@ abstract class WebController
     }
 
     /**
-     * Get a Doctrine DBAL
+     * Get a Doctrine DBAL instance
      *
      * @param  string $connection
      *
      * @return string
      */
-    public function getDb($connection = '')
+    public function getDoctrineDbal($connection = '')
     {
         $app = $this->getApp();
 
@@ -73,6 +73,32 @@ abstract class WebController
         }
 
         return $app['db'][$connection];
+    }
+
+    /**
+     * Get a Doctrine Entity Manager instance
+     *
+     * @param  string $connection
+     *
+     * @return string
+     */
+    public function getDoctrineEm($connection = '')
+    {
+        $app = $this->getApp();
+
+        if (empty($connection)) {
+            if (!isset($app['orm.em'])) {
+                throw new FatalErrorException('The DoctrineOrmServiceProvider is not registered in this application');
+            }
+
+            return $app['orm.em'];
+        }
+
+        if (!isset($app['orm.ems'][$connection])) {
+            throw new FatalErrorException(sprintf('The DoctrineOrmServiceProvider is not registered in this application or the connection %s not exists', $connection));
+        }
+
+        return $app['orm.ems'][$connection];
     }
 
     /**

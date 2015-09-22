@@ -1,6 +1,7 @@
 <?php
 
 use Cekurte\Silex\Provider\DefaultControllerProvider;
+use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use JDesrosiers\Silex\Provider\CorsServiceProvider;
 use Silex\Application;
 use Silex\Provider\DoctrineServiceProvider;
@@ -17,13 +18,18 @@ $app['debug'] = Helpers::getEnv('APP_DEBUG');
 
 Request::enableHttpMethodParameterOverride();
 
+$doctrine = require CONFIG_PATH . DIRECTORY_SEPARATOR . 'doctrine.php';
+
+$app->register(new DoctrineServiceProvider(),    $doctrine['dbal']);
+$app->register(new DoctrineOrmServiceProvider(), $doctrine['orm']);
+
 $app->register(new SessionServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
 $app->register(new ServiceControllerServiceProvider());
-$app->register(new CorsServiceProvider(),     require CONFIG_PATH . DIRECTORY_SEPARATOR . 'cors.php');
-$app->register(new DoctrineServiceProvider(), require CONFIG_PATH . DIRECTORY_SEPARATOR . 'doctrine.php');
-$app->register(new MonologServiceProvider(),  require CONFIG_PATH . DIRECTORY_SEPARATOR . 'monolog.php');
-$app->register(new TwigServiceProvider(),     require CONFIG_PATH . DIRECTORY_SEPARATOR . 'twig.php');
+
+$app->register(new CorsServiceProvider(),    require CONFIG_PATH . DIRECTORY_SEPARATOR . 'cors.php');
+$app->register(new MonologServiceProvider(), require CONFIG_PATH . DIRECTORY_SEPARATOR . 'monolog.php');
+$app->register(new TwigServiceProvider(),    require CONFIG_PATH . DIRECTORY_SEPARATOR . 'twig.php');
 
 require CONFIG_PATH . DIRECTORY_SEPARATOR . 'error.php';
 

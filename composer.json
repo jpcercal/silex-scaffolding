@@ -14,7 +14,7 @@
         "jdesrosiers/silex-cors-provider": "^0.1.4",
         "symfony/console": "^2.7",
         "doctrine/migrations": "^1.0",
-        "kurl/silex-doctrine-migrations-provider": "^0.1.1"
+        "dflydev/doctrine-orm-service-provider": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
@@ -46,8 +46,8 @@
             "git init",
             "mkdir -p storage/logs",
             "mkdir -p storage/cache",
-            "mkdir -p storage/migrations",
-            "chmod +x app/console",
+            "mkdir -p storage/doctrine/migrations",
+            "mkdir -p storage/doctrine/proxies",
             "chmod -Rf 777 storage/",
             "php -r \"copy('.env.example', '.env');\""
         ]

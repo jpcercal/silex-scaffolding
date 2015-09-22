@@ -5,6 +5,4 @@ require __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 
 $app = require CONFIG_PATH . DIRECTORY_SEPARATOR . 'app.console.php';
 
-$app->boot();
-
-$console->run();
+$app->run();
