@@ -11,6 +11,7 @@ use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\SessionServiceProvider;
+use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
@@ -35,6 +36,7 @@ $app->register(new TranslationLoaderFilesServiceProvider());
 
 $app->register(new CorsServiceProvider(),        require CONFIG_PATH . DIRECTORY_SEPARATOR . 'cors.php');
 $app->register(new MonologServiceProvider(),     require CONFIG_PATH . DIRECTORY_SEPARATOR . 'monolog.php');
+$app->register(new SwiftmailerServiceProvider(), require CONFIG_PATH . DIRECTORY_SEPARATOR . 'swiftmailer.php');
 $app->register(new TranslationServiceProvider(), require CONFIG_PATH . DIRECTORY_SEPARATOR . 'translation.php');
 $app->register(new TwigServiceProvider(),        require CONFIG_PATH . DIRECTORY_SEPARATOR . 'twig.php');
 
