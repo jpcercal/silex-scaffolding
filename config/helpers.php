@@ -42,6 +42,12 @@ class Helpers
             return is_int($env) ? (int) $env : (float) $env;
         }
 
+        if (is_string($env) && isset($env[0])) {
+            if ($env[0] === '[' && $env[$lastStrPosition = (strlen($env) - 1)] === ']') {
+                $env = explode(',', trim(str_replace(['"', "'"], '', substr($env, 1, -1))));
+            }
+        }
+
         return $env;
     }
 }

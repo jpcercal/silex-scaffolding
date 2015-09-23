@@ -10,6 +10,7 @@ define('STORAGE_PATH', realpath(ROOT_PATH . DIRECTORY_SEPARATOR . 'storage'));
 
 define('STORAGE_PATH_CACHE', realpath(STORAGE_PATH . DIRECTORY_SEPARATOR . 'cache'));
 define('STORAGE_PATH_LOG',   realpath(STORAGE_PATH . DIRECTORY_SEPARATOR . 'logs'));
+define('STORAGE_PATH_I18N',  realpath(STORAGE_PATH . DIRECTORY_SEPARATOR . 'i18n'));
 
 require VENDOR_PATH . DIRECTORY_SEPARATOR . 'autoload.php';
 require CONFIG_PATH . DIRECTORY_SEPARATOR . 'dotenv.php';

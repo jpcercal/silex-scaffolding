@@ -1,5 +1,6 @@
 <?php
 
+use App\ServiceProvider\DoctrineExtensionsServiceProvider;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\DBAL\Migrations\Configuration\Configuration;
 use Doctrine\DBAL\Tools\Console\ConsoleRunner;
@@ -51,20 +52,9 @@ $migrations = require CONFIG_PATH . DIRECTORY_SEPARATOR . 'migrations.php';
 
 $app->register(new DoctrineServiceProvider(),    $doctrine['dbal']);
 $app->register(new DoctrineOrmServiceProvider(), $doctrine['orm']);
-
-$mappings = $doctrine['orm']['orm.em.options']['mappings'];
-
-$paths = [];
-
-foreach ($mappings as $mapping) {
-    $paths[] = $mapping['path'];
-}
-
-$driverImpl = new AnnotationDriver(new AnnotationReader(), $paths);
+$app->register(new DoctrineExtensionsServiceProvider());
 
 $em = $app['orm.em'];
-
-$em->getConfiguration()->setMetadataDriverImpl($driverImpl);
 
 $helperSet = new HelperSet(array(
     'db'     => new ConnectionHelper($em->getConnection()),
