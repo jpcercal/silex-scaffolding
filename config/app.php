@@ -3,6 +3,7 @@
 use App\Provider\ApiControllerProvider;
 use App\Provider\PageControllerProvider;
 use App\ServiceProvider\DoctrineExtensionsServiceProvider;
+use App\ServiceProvider\TranslationLoaderFilesServiceProvider;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use JDesrosiers\Silex\Provider\CorsServiceProvider;
 use Silex\Application;
@@ -30,6 +31,7 @@ $app->register(new DoctrineExtensionsServiceProvider());
 $app->register(new SessionServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
 $app->register(new ServiceControllerServiceProvider());
+$app->register(new TranslationLoaderFilesServiceProvider());
 
 $app->register(new CorsServiceProvider(),        require CONFIG_PATH . DIRECTORY_SEPARATOR . 'cors.php');
 $app->register(new MonologServiceProvider(),     require CONFIG_PATH . DIRECTORY_SEPARATOR . 'monolog.php');
