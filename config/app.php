@@ -21,7 +21,16 @@ use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
 
-$app = new Application();
+class App extends Application
+{
+    use Application\TwigTrait;
+    use Application\UrlGeneratorTrait;
+    use Application\SwiftmailerTrait;
+    use Application\MonologTrait;
+    use Application\TranslationTrait;
+}
+
+$app = new App();
 
 $app['debug'] = Helpers::getEnv('APP_DEBUG');
 

@@ -4,6 +4,7 @@ namespace App\ServiceProvider;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;
+use Silex\Translator;
 use Symfony\Component\HttpKernel\Exception\FatalErrorException;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
 
@@ -18,7 +19,8 @@ class TranslationLoaderFilesServiceProvider implements ServiceProviderInterface
             throw new FatalErrorException('The TranslationServiceProvider is not registered in this application');
         }
 
-        $app['translator'] = $app->share($app->extend('translator', function($translator, $app) {
+        $app['translator'] = $app->share($app->extend('translator', function (Translator $translator, Application $app) {
+
             $translator->addLoader('yaml', new YamlFileLoader());
 
             $iterator = new \DirectoryIterator(STORAGE_PATH_I18N);
@@ -60,6 +62,5 @@ class TranslationLoaderFilesServiceProvider implements ServiceProviderInterface
      */
     public function register(Application $app)
     {
-
     }
 }

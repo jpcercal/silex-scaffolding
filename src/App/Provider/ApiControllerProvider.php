@@ -10,7 +10,7 @@ class ApiControllerProvider implements ControllerProviderInterface
 {
     public function connect(Application $app)
     {
-        $app['api.default.controller'] = $app->share(function() use ($app) {
+        $app['api.default.controller'] = $app->share(function () use ($app) {
             return new DefaultController($app);
         });
 

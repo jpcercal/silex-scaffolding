@@ -1,11 +1,9 @@
 <?php
 
 use App\ServiceProvider\DoctrineExtensionsServiceProvider;
-use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\DBAL\Migrations\Configuration\Configuration;
 use Doctrine\DBAL\Tools\Console\ConsoleRunner;
 use Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper;
-use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
 use Doctrine\ORM\Version;
 use Silex\Application as SilexApplication;

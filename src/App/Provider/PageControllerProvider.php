@@ -10,7 +10,7 @@ class PageControllerProvider implements ControllerProviderInterface
 {
     public function connect(Application $app)
     {
-        $app['page.home.controller'] = $app->share(function() use ($app) {
+        $app['page.home.controller'] = $app->share(function () use ($app) {
             return new HomeController($app);
         });
 
