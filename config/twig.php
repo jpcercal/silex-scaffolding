@@ -1,10 +1,12 @@
 <?php
 
+use Cekurte\Silex\Service\Environment;
+
 return [
     'twig.path'       => APP_PATH,
-    'twig.class_path' => VENDOR_PATH . DIRECTORY_SEPARATOR . 'twig' . DIRECTORY_SEPARATOR . 'twig' . DIRECTORY_SEPARATOR . 'lib',
+    'twig.class_path' => VENDOR_PATH . DS . 'twig' . DS . 'twig' . DS . 'lib',
     'twig.options'    => [
-        'cache'       => STORAGE_PATH_CACHE . DIRECTORY_SEPARATOR . 'twig.cache',
-        'debug'       => $app['debug'],
+        'cache'       => STORAGE_PATH_CACHE . DS . 'twig.cache',
+        'debug'       => Environment::get('APP_DEBUG'),
     ],
 ];

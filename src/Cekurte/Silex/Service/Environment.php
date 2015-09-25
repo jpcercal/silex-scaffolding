@@ -1,9 +1,8 @@
 <?php
 
-/**
- * Helpers
- */
-class Helpers
+namespace Cekurte\Silex\Service;
+
+class Environment
 {
     /**
      * Constructor disabled
@@ -21,7 +20,7 @@ class Helpers
      *
      * @return mixed
      */
-    public static function getEnv($key)
+    public static function get($key)
     {
         $env   = getenv($key);
         $value = strtolower($env);

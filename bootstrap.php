@@ -1,17 +1,18 @@
 <?php
 
+define('DS', DIRECTORY_SEPARATOR);
+
 define('ROOT_PATH', realpath(__DIR__));
 
-define('PUBLIC_PATH',  realpath(ROOT_PATH . DIRECTORY_SEPARATOR . 'public'));
-define('APP_PATH',     realpath(ROOT_PATH . DIRECTORY_SEPARATOR . 'src'));
-define('VENDOR_PATH',  realpath(ROOT_PATH . DIRECTORY_SEPARATOR . 'vendor'));
-define('CONFIG_PATH',  realpath(ROOT_PATH . DIRECTORY_SEPARATOR . 'config'));
-define('STORAGE_PATH', realpath(ROOT_PATH . DIRECTORY_SEPARATOR . 'storage'));
+define('PUBLIC_PATH', realpath(ROOT_PATH . DS . 'public'));
+define('APP_PATH', realpath(ROOT_PATH . DS . 'src'));
+define('VENDOR_PATH', realpath(ROOT_PATH . DS . 'vendor'));
+define('CONFIG_PATH', realpath(ROOT_PATH . DS . 'config'));
+define('STORAGE_PATH', realpath(ROOT_PATH . DS . 'storage'));
 
-define('STORAGE_PATH_CACHE', realpath(STORAGE_PATH . DIRECTORY_SEPARATOR . 'cache'));
-define('STORAGE_PATH_LOG',   realpath(STORAGE_PATH . DIRECTORY_SEPARATOR . 'logs'));
-define('STORAGE_PATH_I18N',  realpath(STORAGE_PATH . DIRECTORY_SEPARATOR . 'i18n'));
+define('STORAGE_PATH_CACHE', realpath(STORAGE_PATH . DS . 'cache'));
+define('STORAGE_PATH_LOG', realpath(STORAGE_PATH . DS . 'logs'));
+define('STORAGE_PATH_I18N', realpath(STORAGE_PATH . DS . 'i18n'));
 
-require VENDOR_PATH . DIRECTORY_SEPARATOR . 'autoload.php';
-require CONFIG_PATH . DIRECTORY_SEPARATOR . 'dotenv.php';
-require CONFIG_PATH . DIRECTORY_SEPARATOR . 'helpers.php';
+require VENDOR_PATH . DS . 'autoload.php';
+require CONFIG_PATH . DS . 'dotenv.php';

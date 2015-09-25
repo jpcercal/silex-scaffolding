@@ -1,6 +1,8 @@
 <?php
 
+use Cekurte\Silex\Service\Environment;
+
 return [
-    'locale'           => Helpers::getEnv('TRANS_LOCALE'),
-    'locale_fallbacks' => Helpers::getEnv('TRANS_LOCALE_FALLBACKS'),
+    'locale'           => Environment::get('TRANS_LOCALE'),
+    'locale_fallbacks' => Environment::get('TRANS_LOCALE_FALLBACKS'),
 ];
