@@ -1,13 +1,15 @@
 <?php
 
+use Cekurte\Silex\Service\Environment;
+
 return [
-    'swiftmailer.use_spool' => Helpers::getEnv('SWIFTMAILER_USE_SPOOL'),
+    'swiftmailer.use_spool' => Environment::get('SWIFTMAILER_USE_SPOOL'),
     'swiftmailer.options'   => [
-        'host'       => Helpers::getEnv('SMTP_HOST'),
-        'port'       => Helpers::getEnv('SMTP_PORT'),
-        'username'   => Helpers::getEnv('SMTP_USERNAME'),
-        'password'   => Helpers::getEnv('SMTP_PASSWORD'),
-        'encryption' => Helpers::getEnv('SMTP_ENCRYPTION'),
-        'auth_mode'  => Helpers::getEnv('SMTP_AUTH_MODE'),
+        'host'       => Environment::get('SMTP_HOST'),
+        'port'       => Environment::get('SMTP_PORT'),
+        'username'   => Environment::get('SMTP_USERNAME'),
+        'password'   => Environment::get('SMTP_PASSWORD'),
+        'encryption' => Environment::get('SMTP_ENCRYPTION'),
+        'auth_mode'  => Environment::get('SMTP_AUTH_MODE'),
     ],
 ];

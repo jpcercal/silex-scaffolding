@@ -1,8 +1,10 @@
 <?php
 
+use Cekurte\Silex\Service\Environment;
+
 return [
-    'migrations.directory'  => ROOT_PATH . DIRECTORY_SEPARATOR . Helpers::getEnv('DOCTRINE_MIGRATIONS_DIRECTORY'),
-    'migrations.name'       => Helpers::getEnv('DOCTRINE_MIGRATIONS_NAME'),
-    'migrations.namespace'  => Helpers::getEnv('DOCTRINE_MIGRATIONS_NAMESPACE'),
-    'migrations.table_name' => Helpers::getEnv('DOCTRINE_MIGRATIONS_TABLENAME'),
+    'migrations.directory'  => ROOT_PATH . DS . Environment::get('DOCTRINE_MIGRATIONS_DIRECTORY'),
+    'migrations.name'       => Environment::get('DOCTRINE_MIGRATIONS_NAME'),
+    'migrations.namespace'  => Environment::get('DOCTRINE_MIGRATIONS_NAMESPACE'),
+    'migrations.table_name' => Environment::get('DOCTRINE_MIGRATIONS_TABLENAME'),
 ];

@@ -14,6 +14,7 @@
 
 namespace App\Command;
 
+use Cekurte\Silex\Service\Environment;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\Driver\DatabaseDriver;
 use Doctrine\ORM\Tools\Console\MetadataFilter;
@@ -76,10 +77,12 @@ class ImportMappingDoctrineCommand extends Command
      */
     protected function configure()
     {
+        $filterDescription = 'A string pattern used to match entities that should be mapped.';
+
         $this
             ->setName('doctrine:mapping:import')
-            ->addOption('filter', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'A string pattern used to match entities that should be mapped.')
-            ->addOption('force',  null, InputOption::VALUE_NONE, 'Force to overwrite existing mapping files.')
+            ->addOption('filter', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, $filterDescription)
+            ->addOption('force', null, InputOption::VALUE_NONE, 'Force to overwrite existing mapping files.')
             ->setDescription('Imports mapping information from an existing database')
             ->setHelp(<<<EOT
 The <info>doctrine:mapping:import</info> command imports mapping information
@@ -97,7 +100,7 @@ Use the <info>--force</info> option, if you want to override existing mapping fi
 
 <info>php app/console doctrine:mapping:import --force</info>
 EOT
-        );
+            );
     }
 
     /**
@@ -105,7 +108,7 @@ EOT
      */
     protected function getNamespace()
     {
-        return \Helpers::getEnv('DOCTRINE_ORM_MAPPING_DEFAULT_NAMESPACE');
+        return Environment::get('DOCTRINE_ORM_MAPPING_DEFAULT_NAMESPACE');
     }
 
     /**

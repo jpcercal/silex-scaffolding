@@ -1,9 +1,11 @@
 <?php
 
+use Cekurte\Silex\Service\Environment;
+
 return [
-    'cors.allowOrigin'      => Helpers::getEnv('CORS_ALLOW_ORIGIN'),
-    'cors.allowMethods'     => Helpers::getEnv('CORS_ALLOW_METHODS'),
-    'cors.maxAge'           => Helpers::getEnv('CORS_MAX_AGE'),
-    'cors.allowCredentials' => Helpers::getEnv('CORS_ALLOW_CREDENTIALS'),
-    'cors.exposeHeaders'    => Helpers::getEnv('CORS_EXPOSE_HEADERS'),
+    'cors.allowOrigin'      => Environment::get('CORS_ALLOW_ORIGIN'),
+    'cors.allowMethods'     => Environment::get('CORS_ALLOW_METHODS'),
+    'cors.maxAge'           => Environment::get('CORS_MAX_AGE'),
+    'cors.allowCredentials' => Environment::get('CORS_ALLOW_CREDENTIALS'),
+    'cors.exposeHeaders'    => Environment::get('CORS_EXPOSE_HEADERS'),
 ];

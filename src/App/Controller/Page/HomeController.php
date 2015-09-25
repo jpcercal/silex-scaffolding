@@ -10,7 +10,7 @@ class HomeController extends AbstractController
     public function indexAction(Request $request)
     {
         return $this->render('Page/Home/index.twig.html', [
-            'title' => 'App\Controller\Page\HomeController::indexAction()'
+            'title' => $this->getApp()->trans('hello')
         ]);
     }
 }
