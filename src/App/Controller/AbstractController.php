@@ -69,7 +69,10 @@ abstract class AbstractController
         }
 
         if (!isset($app['dbs'][$connection])) {
-            throw new FatalErrorException(sprintf('The DoctrineServiceProvider is not registered in this application or the connection %s not exists', $connection));
+            throw new FatalErrorException(sprintf(
+                'The DoctrineServiceProvider is not registered in this application or the connection %s not exists',
+                $connection
+            ));
         }
 
         return $app['db'][$connection];
@@ -95,7 +98,10 @@ abstract class AbstractController
         }
 
         if (!isset($app['orm.ems'][$connection])) {
-            throw new FatalErrorException(sprintf('The DoctrineOrmServiceProvider is not registered in this application or the connection %s not exists', $connection));
+            throw new FatalErrorException(sprintf(
+                'The DoctrineOrmServiceProvider is not registered in this application or the connection %s not exists',
+                $connection
+            ));
         }
 
         return $app['orm.ems'][$connection];

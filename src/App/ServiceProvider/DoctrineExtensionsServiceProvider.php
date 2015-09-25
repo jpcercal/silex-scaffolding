@@ -2,6 +2,7 @@
 
 namespace App\ServiceProvider;
 
+use Cekurte\Silex\Service\Environment;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\CachedReader;
 use Doctrine\Common\Cache\ArrayCache;
@@ -29,27 +30,27 @@ class DoctrineExtensionsServiceProvider implements ServiceProviderInterface
             throw new FatalErrorException('The DoctrineServiceProvider is not registered in this application');
         }
 
-        if (\Helpers::getEnv('DOCTRINE_EXTENSION_ENABLE_SLUGGABLE') === true) {
+        if (Environment::get('DOCTRINE_EXTENSION_ENABLE_SLUGGABLE') === true) {
             $listener = new SluggableListener();
             $app['db.event_manager']->addEventSubscriber($listener);
         }
 
-        if (\Helpers::getEnv('DOCTRINE_EXTENSION_ENABLE_TREE') === true) {
+        if (Environment::get('DOCTRINE_EXTENSION_ENABLE_TREE') === true) {
             $listener = new TreeListener();
             $app['db.event_manager']->addEventSubscriber($listener);
         }
 
-        if (\Helpers::getEnv('DOCTRINE_EXTENSION_ENABLE_LOGGABLE') === true) {
+        if (Environment::get('DOCTRINE_EXTENSION_ENABLE_LOGGABLE') === true) {
             $listener = new LoggableListener();
             $app['db.event_manager']->addEventSubscriber($listener);
         }
 
-        if (\Helpers::getEnv('DOCTRINE_EXTENSION_ENABLE_TIMESTAMPABLE') === true) {
+        if (Environment::get('DOCTRINE_EXTENSION_ENABLE_TIMESTAMPABLE') === true) {
             $listener = new TimestampableListener();
             $app['db.event_manager']->addEventSubscriber($listener);
         }
 
-        if (\Helpers::getEnv('DOCTRINE_EXTENSION_ENABLE_TRANSLATABLE') === true) {
+        if (Environment::get('DOCTRINE_EXTENSION_ENABLE_TRANSLATABLE') === true) {
             $listener = new TranslatableListener();
 
             if (!isset($app['translator'])) {
@@ -62,7 +63,7 @@ class DoctrineExtensionsServiceProvider implements ServiceProviderInterface
             $app['db.event_manager']->addEventSubscriber($listener);
         }
 
-        if (\Helpers::getEnv('DOCTRINE_EXTENSION_ENABLE_SORTABLE') === true) {
+        if (Environment::get('DOCTRINE_EXTENSION_ENABLE_SORTABLE') === true) {
             $listener = new SortableListener();
             $app['db.event_manager']->addEventSubscriber($listener);
         }

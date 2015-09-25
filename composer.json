@@ -38,7 +38,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "App\\": "src/App/"
+            "App\\": "src/App/",
+            "Cekurte\\": "src/Cekurte/"
         }
     },
     "autoload-dev": {

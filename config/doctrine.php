@@ -1,28 +1,30 @@
 <?php
 
+use Cekurte\Silex\Service\Environment;
+
 return [
     'dbal' => [
         'db.options'    => [
-            'driver'    => Helpers::getEnv('DB_DRIVER'),
-            'host'      => Helpers::getEnv('DB_HOST'),
-            'dbname'    => Helpers::getEnv('DB_NAME'),
-            'user'      => Helpers::getEnv('DB_USERNAME'),
-            'password'  => Helpers::getEnv('DB_PASSWORD'),
-            'charset'   => Helpers::getEnv('DB_CHARSET'),
-            'port'      => Helpers::getEnv('DB_PORT'),
+            'driver'    => Environment::get('DB_DRIVER'),
+            'host'      => Environment::get('DB_HOST'),
+            'dbname'    => Environment::get('DB_NAME'),
+            'user'      => Environment::get('DB_USERNAME'),
+            'password'  => Environment::get('DB_PASSWORD'),
+            'charset'   => Environment::get('DB_CHARSET'),
+            'port'      => Environment::get('DB_PORT'),
         ],
     ],
     'orm' => [
-        'orm.proxies_dir'           => ROOT_PATH . DIRECTORY_SEPARATOR . Helpers::getEnv('DOCTRINE_ORM_PROXIES_DIRECTORY'),
-        'orm.proxies_namespace'     => Helpers::getEnv('DOCTRINE_ORM_PROXIES_NAMESPACE'),
-        'orm.auto_generate_proxies' => Helpers::getEnv('DOCTRINE_ORM_AUTO_GENERATE_PROXIES'),
-        'orm.default_cache'         => Helpers::getEnv('DOCTRINE_ORM_DEFAULT_CACHE'),
+        'orm.proxies_dir'           => ROOT_PATH . DS . Environment::get('DOCTRINE_ORM_PROXIES_DIRECTORY'),
+        'orm.proxies_namespace'     => Environment::get('DOCTRINE_ORM_PROXIES_NAMESPACE'),
+        'orm.auto_generate_proxies' => Environment::get('DOCTRINE_ORM_AUTO_GENERATE_PROXIES'),
+        'orm.default_cache'         => Environment::get('DOCTRINE_ORM_DEFAULT_CACHE'),
         'orm.em.options' => [
             'mappings' => [
                 [
-                    'type'      => Helpers::getEnv('DOCTRINE_ORM_MAPPING_DEFAULT_TYPE'),
-                    'namespace' => Helpers::getEnv('DOCTRINE_ORM_MAPPING_DEFAULT_NAMESPACE'),
-                    'path'      => ROOT_PATH . DIRECTORY_SEPARATOR . Helpers::getEnv('DOCTRINE_ORM_MAPPING_DEFAULT_PATH'),
+                    'type'      => Environment::get('DOCTRINE_ORM_MAPPING_DEFAULT_TYPE'),
+                    'namespace' => Environment::get('DOCTRINE_ORM_MAPPING_DEFAULT_NAMESPACE'),
+                    'path'      => ROOT_PATH . DS . Environment::get('DOCTRINE_ORM_MAPPING_DEFAULT_PATH'),
                 ],
             ],
         ],

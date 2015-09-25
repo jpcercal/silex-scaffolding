@@ -1,29 +1,17 @@
 <?php
 
 use App\ServiceProvider\DoctrineExtensionsServiceProvider;
-use Doctrine\DBAL\Migrations\Configuration\Configuration;
-use Doctrine\DBAL\Tools\Console\ConsoleRunner;
-use Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper;
-use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
-use Doctrine\ORM\Version;
-use Silex\Application as SilexApplication;
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Helper\DialogHelper;
-use Symfony\Component\Console\Helper\HelperSet;
-
-// Silex Providers
+use Cekurte\Silex\Service\Environment;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
-use Silex\Provider\DoctrineServiceProvider;
-
-// Doctrine Migration Commands
+use Doctrine\DBAL\Migrations\Configuration\Configuration;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\DiffCommand;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\ExecuteCommand;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\GenerateCommand;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\MigrateCommand;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\StatusCommand;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\VersionCommand;
-
-// Doctrine ORM Commands
+use Doctrine\DBAL\Tools\Console\ConsoleRunner;
+use Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper;
 use Doctrine\ORM\Tools\Console\Command\ClearCache\MetadataCommand;
 use Doctrine\ORM\Tools\Console\Command\ClearCache\QueryCommand;
 use Doctrine\ORM\Tools\Console\Command\ClearCache\ResultCommand;
@@ -40,15 +28,22 @@ use Doctrine\ORM\Tools\Console\Command\SchemaTool\CreateCommand;
 use Doctrine\ORM\Tools\Console\Command\SchemaTool\DropCommand;
 use Doctrine\ORM\Tools\Console\Command\SchemaTool\UpdateCommand;
 use Doctrine\ORM\Tools\Console\Command\ValidateSchemaCommand;
+use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
+use Doctrine\ORM\Version;
+use Silex\Application as SilexApplication;
+use Silex\Provider\DoctrineServiceProvider;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Helper\DialogHelper;
+use Symfony\Component\Console\Helper\HelperSet;
 
 $app = new SilexApplication();
 
-$app['debug'] = Helpers::getEnv('APP_DEBUG');
+$app['debug'] = Environment::get('APP_DEBUG');
 
-$doctrine   = require CONFIG_PATH . DIRECTORY_SEPARATOR . 'doctrine.php';
-$migrations = require CONFIG_PATH . DIRECTORY_SEPARATOR . 'migrations.php';
+$doctrine   = require CONFIG_PATH . DS . 'doctrine.php';
+$migrations = require CONFIG_PATH . DS . 'migrations.php';
 
-$app->register(new DoctrineServiceProvider(),    $doctrine['dbal']);
+$app->register(new DoctrineServiceProvider(), $doctrine['dbal']);
 $app->register(new DoctrineOrmServiceProvider(), $doctrine['orm']);
 $app->register(new DoctrineExtensionsServiceProvider());
 
