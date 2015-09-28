@@ -1,7 +1,7 @@
 <?php
 
 use App\ServiceProvider\DoctrineExtensionsServiceProvider;
-use Cekurte\Silex\Service\Environment;
+use Cekurte\Environment\Environment;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Doctrine\DBAL\Migrations\Configuration\Configuration;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\DiffCommand;

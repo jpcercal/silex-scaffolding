@@ -18,7 +18,10 @@
         "gedmo/doctrine-extensions": "^2.4",
         "vlucas/phpdotenv": "^2.0",
         "jdesrosiers/silex-cors-provider": "^0.1.4",
-        "saxulum/saxulum-webprofiler-provider": "^1.1"
+        "saxulum/saxulum-webprofiler-provider": "^1.1",
+        "cekurte/silex-translation-provider": "^0.0.1",
+        "cekurte/silex-manager-provider": "^0.0.1",
+        "cekurte/environment": "^0.0.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",

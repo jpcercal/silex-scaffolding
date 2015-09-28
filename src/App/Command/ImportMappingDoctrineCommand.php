@@ -14,7 +14,7 @@
 
 namespace App\Command;
 
-use Cekurte\Silex\Service\Environment;
+use Cekurte\Environment\Environment;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\Driver\DatabaseDriver;
 use Doctrine\ORM\Tools\Console\MetadataFilter;
