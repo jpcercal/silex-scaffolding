@@ -44,6 +44,8 @@ abstract class AbstractConfig implements ConfigInterface
     public function setResource($resource)
     {
         $this->resource = $resource;
+
+        return $this;
     }
 
     /**

@@ -2,6 +2,13 @@
 
 namespace Cekurte\Silex\Service;
 
+use Cekurte\Silex\Service\Environment\ArrayEnvironment;
+use Cekurte\Silex\Service\Environment\BooleanEnvironment;
+use Cekurte\Silex\Service\Environment\JsonEnvironment;
+use Cekurte\Silex\Service\Environment\NullEnvironment;
+use Cekurte\Silex\Service\Environment\NumericEnvironment;
+use Cekurte\Silex\Service\Environment\UnknownEnvironment;
+
 class Environment
 {
     /**
@@ -22,31 +29,23 @@ class Environment
      */
     public static function get($key)
     {
-        $env   = getenv($key);
-        $value = strtolower($env);
+        $env      = getenv($key);
+        $envLower = strtolower($env);
 
-        if ($value === 'true') {
-            return true;
+        $environment = new UnknownEnvironment($env);
+
+        if (in_array($envLower, ['true', 'false'])) {
+            $environment = new BooleanEnvironment($env);
+        } elseif ($envLower === 'null') {
+            $environment = new NullEnvironment($env);
+        } elseif (is_numeric($env)) {
+            $environment = new NumericEnvironment($env);
+        } elseif (is_string($env) && isset($env[0]) && $env[0] === '[') {
+            $environment = new ArrayEnvironment($env);
+        } elseif (is_string($env) && isset($env[0]) && $env[0] === '{') {
+            $environment = new JsonEnvironment($env);
         }
 
-        if ($value === 'false') {
-            return false;
-        }
-
-        if ($value === 'null') {
-            return null;
-        }
-
-        if (is_numeric($env)) {
-            return is_int($env) ? (int) $env : (float) $env;
-        }
-
-        if (is_string($env) && isset($env[0])) {
-            if ($env[0] === '[' && $env[strlen($env) - 1] === ']') {
-                $env = explode(',', trim(str_replace(['"', "'"], '', substr($env, 1, -1))));
-            }
-        }
-
-        return $env;
+        return $environment->process();
     }
 }
