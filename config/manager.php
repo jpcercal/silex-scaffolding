@@ -19,7 +19,7 @@ return [
     'App\ServiceProvider\DoctrineExtensionsServiceProvider' => [
         'register' => true,
     ],
-    'Cekurte\Silex\Provider\TranslationServiceProvider' => [
+    'Cekurte\Silex\Translation\Provider\TranslationServiceProvider' => [
         'register' => true,
     ],
     'Silex\Provider\HttpFragmentServiceProvider' => [

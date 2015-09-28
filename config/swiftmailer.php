@@ -1,6 +1,6 @@
 <?php
 
-use Cekurte\Silex\Service\Environment;
+use Cekurte\Environment\Environment;
 
 return [
     'swiftmailer.use_spool' => Environment::get('SWIFTMAILER_USE_SPOOL'),

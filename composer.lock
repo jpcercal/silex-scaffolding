@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a72324f3610bd724e874389e29b4206e",
-    "content-hash": "cd77f02eb794462f09e6691a26aa55a5",
+    "hash": "1770a93b39afea803ac29a06d7e0b3e0",
+    "content-hash": "41cec043d697a2d8261d56b1898f6fb2",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -46,6 +46,168 @@
                 "transliterator"
             ],
             "time": "2014-05-15 22:08:22"
+        },
+        {
+            "name": "cekurte/environment",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jpcercal/environment.git",
+                "reference": "b0ed854ccba6788fd4749c3ecce28100513ffb0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jpcercal/environment/zipball/b0ed854ccba6788fd4749c3ecce28100513ffb0c",
+                "reference": "b0ed854ccba6788fd4749c3ecce28100513ffb0c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6",
+                "silex/silex": "^1.3"
+            },
+            "require-dev": {
+                "cekurte/tdd": "^1.0",
+                "phpunit/phpunit": "^4.8",
+                "sensiolabs/security-checker": "^3.0",
+                "sjparkinson/static-review": "^5.1",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cekurte\\Environment\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "João Paulo Cercal",
+                    "email": "jpcercal@gmail.com"
+                }
+            ],
+            "description": "A library to get the values from environment variables and process to php data types",
+            "keywords": [
+                "config",
+                "data",
+                "env",
+                "environment",
+                "process",
+                "types",
+                "variables"
+            ],
+            "time": "2015-09-28 14:41:06"
+        },
+        {
+            "name": "cekurte/silex-manager-provider",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jpcercal/silex-manager-provider.git",
+                "reference": "39c566fa91c52dd56e82500d81be167f2af57dd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jpcercal/silex-manager-provider/zipball/39c566fa91c52dd56e82500d81be167f2af57dd0",
+                "reference": "39c566fa91c52dd56e82500d81be167f2af57dd0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6",
+                "silex/silex": "^1.3"
+            },
+            "require-dev": {
+                "cekurte/tdd": "^1.0",
+                "phpunit/phpunit": "^4.8",
+                "sensiolabs/security-checker": "^3.0",
+                "sjparkinson/static-review": "^5.1",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cekurte\\Silex\\Manager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "João Paulo Cercal",
+                    "email": "jpcercal@gmail.com"
+                }
+            ],
+            "description": "A silex service provider that adds Manager to loader other service providers",
+            "keywords": [
+                "boot",
+                "loader",
+                "manager",
+                "provider",
+                "register",
+                "service",
+                "silex"
+            ],
+            "time": "2015-09-28 14:35:50"
+        },
+        {
+            "name": "cekurte/silex-translation-provider",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jpcercal/silex-translation-provider.git",
+                "reference": "299843160472ce36c1ee6175454f77d9c2c921db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jpcercal/silex-translation-provider/zipball/299843160472ce36c1ee6175454f77d9c2c921db",
+                "reference": "299843160472ce36c1ee6175454f77d9c2c921db",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6",
+                "silex/silex": "^1.3",
+                "symfony/config": "^2.7",
+                "symfony/translation": "^2.7",
+                "symfony/yaml": "^2.7"
+            },
+            "require-dev": {
+                "cekurte/tdd": "^1.0",
+                "phpunit/phpunit": "^4.8",
+                "sensiolabs/security-checker": "^3.0",
+                "sjparkinson/static-review": "^5.1",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cekurte\\Silex\\Translation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "João Paulo Cercal",
+                    "email": "jpcercal@gmail.com"
+                }
+            ],
+            "description": "A silex service provider that adds loader (translation) from yaml files",
+            "keywords": [
+                "boot",
+                "loader",
+                "provider",
+                "register",
+                "service",
+                "silex",
+                "translation"
+            ],
+            "time": "2015-09-28 14:43:06"
         },
         {
             "name": "dflydev/doctrine-orm-service-provider",
