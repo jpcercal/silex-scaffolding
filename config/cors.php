@@ -1,6 +1,6 @@
 <?php
 
-use Cekurte\Silex\Service\Environment;
+use Cekurte\Environment\Environment;
 
 return [
     'cors.allowOrigin'      => Environment::get('CORS_ALLOW_ORIGIN'),

@@ -2,7 +2,7 @@
 
 namespace App\ServiceProvider;
 
-use Cekurte\Silex\Service\Environment;
+use Cekurte\Environment\Environment;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\CachedReader;
 use Doctrine\Common\Cache\ArrayCache;

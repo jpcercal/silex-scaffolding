@@ -1,10 +1,10 @@
 <?php
 
+use App\Application;
 use App\Provider\ApiControllerProvider;
 use App\Provider\PageControllerProvider;
-use Cekurte\Silex\Application;
-use Cekurte\Silex\Provider\ManagerServiceProvider;
-use Cekurte\Silex\Service\Environment;
+use Cekurte\Environment\Environment;
+use Cekurte\Silex\Manager\Provider\ManagerServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
 
 $app = new Application();
