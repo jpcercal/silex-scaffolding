@@ -34,6 +34,9 @@ return [
     'Silex\Provider\ServiceControllerServiceProvider' => [
         'register' => true,
     ],
+    'Silex\Provider\ValidatorServiceProvider' => [
+        'register' => true,
+    ],
     'JDesrosiers\Silex\Provider\CorsServiceProvider' => [
         'register' => true,
         'type'     => 'php',

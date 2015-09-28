@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpKernel\Exception\FatalErrorException;
+use Symfony\Component\Validator\ValidatorInterface;
 
 /**
  * AbstractController
@@ -47,6 +48,22 @@ abstract class AbstractController
         }
 
         return $app['url_generator']->generate($route, $params);
+    }
+
+    /**
+     * Get the validator instance
+     *
+     * @return ValidatorInterface
+     */
+    public function getValidator()
+    {
+        $app = $this->getApp();
+
+        if (!isset($app['validator'])) {
+            throw new FatalErrorException('The ValidatorServiceProvider is not registered in this application');
+        }
+
+        return $app['validator'];
     }
 
     /**
