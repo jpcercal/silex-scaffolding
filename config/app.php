@@ -1,8 +1,8 @@
 <?php
 
 use App\Application;
-use App\Provider\ApiControllerProvider;
-use App\Provider\PageControllerProvider;
+use App\ControllerProvider\ApiControllerProvider;
+use App\ControllerProvider\PageControllerProvider;
 use Cekurte\Environment\Environment;
 use Cekurte\Silex\Manager\Provider\ManagerServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
