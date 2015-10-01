@@ -3,9 +3,6 @@
 $doctrine = require CONFIG_PATH . DS . 'doctrine.php';
 
 return [
-    'Cekurte\Silex\Provider\EnvironmentServiceProvider' => [
-        'register' => false,
-    ],
     'Silex\Provider\DoctrineServiceProvider' => [
         'register' => true,
         'type'     => 'array',
@@ -21,6 +18,8 @@ return [
     ],
     'Cekurte\Silex\Translation\Provider\TranslationServiceProvider' => [
         'register' => true,
+        'type'     => 'php',
+        'src'      => CONFIG_PATH . DS . 'translation.php',
     ],
     'Silex\Provider\HttpFragmentServiceProvider' => [
         'register' => true,
@@ -51,11 +50,6 @@ return [
         'register' => true,
         'type'     => 'php',
         'src'      => CONFIG_PATH . DS . 'swiftmailer.php',
-    ],
-    'Silex\Provider\TranslationServiceProvider' => [
-        'register' => true,
-        'type'     => 'php',
-        'src'      => CONFIG_PATH . DS . 'translation.php',
     ],
     'Silex\Provider\TwigServiceProvider' => [
         'register' => true,

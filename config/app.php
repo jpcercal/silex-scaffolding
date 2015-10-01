@@ -23,4 +23,6 @@ $app->mount('/', new PageControllerProvider());
 
 $app->mount('/api', new ApiControllerProvider());
 
+$app->after($app["cors"]);
+
 return $app;

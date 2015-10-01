@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1a46c527e03f99400e32d393c6e907d3",
-    "content-hash": "dba6c00d8ca048e8444263b0e1342099",
+    "hash": "609c4af1f7cde115d0316ff3e7ef2206",
+    "content-hash": "bc341f41d41aa3a4d9d6ed0960bf167c",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -49,21 +49,20 @@
         },
         {
             "name": "cekurte/environment",
-            "version": "v0.0.1",
+            "version": "v0.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jpcercal/environment.git",
-                "reference": "b0ed854ccba6788fd4749c3ecce28100513ffb0c"
+                "reference": "e25d028915bc2e3d1bca4cbbedd3b07d69ca834e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jpcercal/environment/zipball/b0ed854ccba6788fd4749c3ecce28100513ffb0c",
-                "reference": "b0ed854ccba6788fd4749c3ecce28100513ffb0c",
+                "url": "https://api.github.com/repos/jpcercal/environment/zipball/e25d028915bc2e3d1bca4cbbedd3b07d69ca834e",
+                "reference": "e25d028915bc2e3d1bca4cbbedd3b07d69ca834e",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6",
-                "silex/silex": "^1.3"
+                "php": "^5.5"
             },
             "require-dev": {
                 "cekurte/tdd": "^1.0",
@@ -98,24 +97,24 @@
                 "types",
                 "variables"
             ],
-            "time": "2015-09-28 14:41:06"
+            "time": "2015-09-30 13:33:40"
         },
         {
             "name": "cekurte/silex-manager-provider",
-            "version": "v0.0.1",
+            "version": "v0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jpcercal/silex-manager-provider.git",
-                "reference": "39c566fa91c52dd56e82500d81be167f2af57dd0"
+                "reference": "4de6eedebf9d43e3dbd2799ff7ea81aa59f594b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jpcercal/silex-manager-provider/zipball/39c566fa91c52dd56e82500d81be167f2af57dd0",
-                "reference": "39c566fa91c52dd56e82500d81be167f2af57dd0",
+                "url": "https://api.github.com/repos/jpcercal/silex-manager-provider/zipball/4de6eedebf9d43e3dbd2799ff7ea81aa59f594b3",
+                "reference": "4de6eedebf9d43e3dbd2799ff7ea81aa59f594b3",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6",
+                "php": "^5.5",
                 "silex/silex": "^1.3"
             },
             "require-dev": {
@@ -151,24 +150,24 @@
                 "service",
                 "silex"
             ],
-            "time": "2015-09-28 14:35:50"
+            "time": "2015-10-01 18:56:39"
         },
         {
             "name": "cekurte/silex-translation-provider",
-            "version": "v0.0.1",
+            "version": "v0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jpcercal/silex-translation-provider.git",
-                "reference": "299843160472ce36c1ee6175454f77d9c2c921db"
+                "reference": "a3a0509a04d2a68ca8ad7dabf95a5a09d3b5c812"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jpcercal/silex-translation-provider/zipball/299843160472ce36c1ee6175454f77d9c2c921db",
-                "reference": "299843160472ce36c1ee6175454f77d9c2c921db",
+                "url": "https://api.github.com/repos/jpcercal/silex-translation-provider/zipball/a3a0509a04d2a68ca8ad7dabf95a5a09d3b5c812",
+                "reference": "a3a0509a04d2a68ca8ad7dabf95a5a09d3b5c812",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6",
+                "php": "^5.5",
                 "silex/silex": "^1.3",
                 "symfony/config": "^2.7",
                 "symfony/translation": "^2.7",
@@ -207,7 +206,7 @@
                 "silex",
                 "translation"
             ],
-            "time": "2015-09-28 14:43:06"
+            "time": "2015-09-30 18:34:42"
         },
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -796,16 +795,16 @@
         },
         {
             "name": "doctrine/migrations",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "3a787de7c4a64460436dc2eb2e3cde8920d5fadd"
+                "reference": "d196ddc229f50c66c5a015c158adb78a2dfb4351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/3a787de7c4a64460436dc2eb2e3cde8920d5fadd",
-                "reference": "3a787de7c4a64460436dc2eb2e3cde8920d5fadd",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/d196ddc229f50c66c5a015c158adb78a2dfb4351",
+                "reference": "d196ddc229f50c66c5a015c158adb78a2dfb4351",
                 "shasum": ""
             },
             "require": {
@@ -831,12 +830,12 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "v1.1.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\DBAL\\Migrations": "lib"
+                "psr-4": {
+                    "Doctrine\\DBAL\\Migrations\\": "lib/Doctrine/DBAL/Migrations"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -859,7 +858,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-07-29 20:43:19"
+            "time": "2015-09-29 11:13:06"
         },
         {
             "name": "doctrine/orm",
@@ -3080,16 +3079,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.9",
+            "version": "4.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b"
+                "reference": "463163747474815c5ccd4ae12b5b355ec12158e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/73fad41adb5b7bc3a494bb930d90648df1d5e74b",
-                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/463163747474815c5ccd4ae12b5b355ec12158e8",
+                "reference": "463163747474815c5ccd4ae12b5b355ec12158e8",
                 "shasum": ""
             },
             "require": {
@@ -3148,7 +3147,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-20 12:56:44"
+            "time": "2015-10-01 09:14:30"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
