@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>{% block title '' %} - My Silex Application</title>
-    </head>
-    <body>
-        {% block content %}{% endblock %}
-    </body>
+<html ng-app="App" ng-controller="CoreController" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+    <!-- BEGIN Metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- END Metadata -->
+
+    <title>{% block title '' %}</title>
+
+    <!-- BEGIN Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- END Favicon -->
+
+    <!-- BEGIN Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic" />
+    <!-- END Fonts -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="assets/css/app{% if app.debug != true %}.min{% endif %}.css">
+</head>
+<body layout="row" ng-cloak>
+    {% block content %}{% endblock %}
+    <script src="assets/js/app{% if app.debug != true %}.min{% endif %}.js"></script>
+</body>
 </html>

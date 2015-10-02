@@ -1,0 +1,44 @@
+{
+    "package": {
+        "name": "app"
+    },
+    "filename": {
+        "package": "package.json",
+        "license": "LICENSE"
+    },
+    "path": {
+        "bower_components": "bower_components",
+        "dist":  "public/assets",
+        "src": {
+            "base": "src/App/Resources/public",
+            "app":  "app",
+            "less": "less",
+            "css":  "css",
+            "js":   "js",
+            "font": "fonts",
+            "img":  "images",
+            "tpl":  "templates"
+        }
+    },
+    "concat": {
+        "files": [
+            "<%= config.path.bower_components %>/angular/angular.min.js",
+            "<%= config.path.bower_components %>/angular-resource/angular-resource.min.js",
+            "<%= config.path.bower_components %>/angular-route/angular-route.min.js",
+            "<%= config.path.bower_components %>/angular-animate/angular-animate.min.js",
+            "<%= config.path.bower_components %>/angular-sanitize/angular-sanitize.min.js",
+            "<%= config.path.bower_components %>/angular-aria/angular-aria.min.js",
+            "<%= config.path.bower_components %>/angular-messages/angular-messages.min.js",
+            "<%= config.path.bower_components %>/angular-material/angular-material.min.js",
+            "<%= config.path.bower_components %>/angular-ui-router/release/angular-ui-router.min.js",
+            "<%= config.path.bower_components %>/angular-loading-bar/build/loading-bar.min.js",
+
+            "<%= config.path.src.base %>/<%= config.path.src.app %>/<%= config.package.name %>.js",
+            "<%= config.path.src.base %>/<%= config.path.src.app %>/modules/core/module.js",
+            "<%= config.path.src.base %>/<%= config.path.src.app %>/modules/core/services/*.js",
+            "<%= config.path.src.base %>/<%= config.path.src.app %>/modules/core/directives/*.js",
+            "<%= config.path.src.base %>/<%= config.path.src.app %>/modules/core/resources/*.js",
+            "<%= config.path.src.base %>/<%= config.path.src.app %>/modules/core/controllers/*.js"
+        ]
+    }
+}

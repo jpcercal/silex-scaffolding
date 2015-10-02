@@ -2,10 +2,22 @@ composer.phar
 /vendor
 /build
 
+._*
+.~lock.*
 *.lock
+*.log
 !composer.lock
 .idea/
+.buildpath
+nbproject
+.project
+.settings
 *.sublime-*
 .env
 storage/logs/
 storage/cache/
+
+.grunt/
+bower_components/
+node_modules/
+public/assets/

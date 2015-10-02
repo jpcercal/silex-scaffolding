@@ -1,0 +1,38 @@
+{
+    "name": "silex-scaffolding",
+    "version": "1.4.1",
+    "homepage": "https://github.com/jpcercal/silex-scaffolding",
+    "authors": [
+        "João Paulo Cercal <jpcercal@gmail.com>"
+    ],
+    "description": "Just a simple scaffolding project to Silex MicroFramework.",
+    "keywords": [
+        "silex",
+        "scaffolding",
+        "angularjs",
+        "api",
+        "php",
+        "web"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "~1.4",
+        "angular-route": "~1.4",
+        "angular-resource": "~1.4",
+        "angular-animate": "~1.4",
+        "angular-sanitize": "~1.4",
+        "angular-aria": "~1.4",
+        "angular-messages": "~1.4",
+        "angular-material": "~0.11",
+        "angular-ui-router": "~0.2",
+        "angular-loading-bar": "~0.8"
+    }
+}
