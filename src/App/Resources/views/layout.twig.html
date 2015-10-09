@@ -28,5 +28,8 @@
 <body layout="row" ng-cloak>
     {% block content %}{% endblock %}
     <script src="assets/js/app{% if app.debug != true %}.min{% endif %}.js"></script>
+    {% if app.debug == true %}
+        <script src="//localhost:35729/livereload.js"></script>
+    {% endif %}
 </body>
 </html>

@@ -157,35 +157,11 @@ module.exports = function (grunt) {
             }
         },
 
-        connect: {
-            options: {
-                port: 9000,
-                livereload: 35729,
-                hostname: 'localhost'
-            },
-            livereload: {
-                options: {
-                    open: true,
-                    base: '<%= config.path.dist %>',
-                    livereload: true,
-                    keepalive: true
-                }
-            },
-            dist: {
-                options: {
-                    open: true,
-                    base: '<%= config.path.dist %>',
-                    livereload: false,
-                    keepalive: true
-                }
-            }
-        },
-
         watch: {
             options: {
-                livereload: '<%= connect.options.livereload %>'
+                livereload: true
             },
-            files: ['<%= config.path.src.base %>/**/*'],
+            files: ['<%= config.path.src.watch %>/**/*'],
             tasks: ['default']
         }
     });
@@ -201,7 +177,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-gh-pages');
     grunt.loadNpmTasks('grunt-notify');
-    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('debug_on', [

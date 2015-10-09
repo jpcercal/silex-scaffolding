@@ -10,14 +10,15 @@
         "bower_components": "bower_components",
         "dist":  "public/assets",
         "src": {
-            "base": "src/App/Resources/public",
-            "app":  "app",
-            "less": "less",
-            "css":  "css",
-            "js":   "js",
-            "font": "fonts",
-            "img":  "images",
-            "tpl":  "templates"
+            "base":  "src/App/Resources/public",
+            "app":   "app",
+            "less":  "less",
+            "css":   "css",
+            "js":    "js",
+            "font":  "fonts",
+            "img":   "images",
+            "tpl":   "templates",
+            "watch": "src"
         }
     },
     "concat": {
