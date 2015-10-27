@@ -2,6 +2,7 @@
 
 use App\Application;
 use App\ControllerProvider\ApiControllerProvider;
+use App\ControllerProvider\AuthControllerProvider;
 use App\ControllerProvider\PageControllerProvider;
 use Cekurte\Environment\Environment;
 use Cekurte\Silex\Manager\Provider\ManagerServiceProvider;
@@ -18,6 +19,8 @@ $app->register(new ManagerServiceProvider());
 Request::enableHttpMethodParameterOverride();
 
 require CONFIG_PATH . DS . 'error.php';
+
+$app->mount('/', new AuthControllerProvider());
 
 $app->mount('/', new PageControllerProvider());
 

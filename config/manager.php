@@ -16,6 +16,11 @@ return [
     'App\ServiceProvider\DoctrineExtensionsServiceProvider' => [
         'register' => true,
     ],
+    'Silex\Provider\SecurityServiceProvider' => [
+        'register' => true,
+        'type'     => 'php',
+        'src'      => CONFIG_PATH . DS . 'security.php',
+    ],
     'Cekurte\Silex\Translation\Provider\TranslationServiceProvider' => [
         'register' => true,
         'type'     => 'php',
@@ -40,6 +45,11 @@ return [
         'register' => true,
         'type'     => 'php',
         'src'      => CONFIG_PATH . DS . 'cors.php',
+    ],
+    'JDesrosiers\Silex\Provider\JmsSerializerServiceProvider' => [
+        'register' => true,
+        'type'     => 'php',
+        'src'      => CONFIG_PATH . DS . 'serializer.php',
     ],
     'Silex\Provider\MonologServiceProvider' => [
         'register' => true,

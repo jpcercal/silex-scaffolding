@@ -5,7 +5,7 @@ namespace App\Response;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\ConstraintViolationList;
 
-class ValidationErrorResponse extends Response
+class ConstraintViolationResponse extends Response
 {
     /**
      * @inheritdoc
