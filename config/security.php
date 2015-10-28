@@ -13,7 +13,7 @@ return [
     ],
     'security.access_rules' => [
         ['^/login$', 'IS_AUTHENTICATED_ANONYMOUSLY'],
-        ['^/.+$',    'ROLE_USER'],
+        ['^.+$',     'ROLE_USER'],
     ],
     'security.firewalls' => [
         'dev' => [
