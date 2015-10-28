@@ -9,6 +9,9 @@
         "symfony/twig-bridge": "^2.7",
         "symfony/console": "^2.7",
         "symfony/validator": "^2.7",
+        "symfony/security": "^2.7",
+        "symfony/psr-http-message-bridge": "^0.2.0",
+        "zendframework/zend-diactoros": "^1.1",
         "swiftmailer/swiftmailer": "^5.4",
         "doctrine/dbal": "^2.5",
         "doctrine/migrations": "^1.0",
@@ -19,7 +22,9 @@
         "saxulum/saxulum-webprofiler-provider": "^1.1",
         "cekurte/silex-translation-provider": "~0.0.1",
         "cekurte/silex-manager-provider": "~0.0.1",
-        "cekurte/environment": "~0.0.1"
+        "cekurte/environment": "~0.0.1",
+        "cekurte/resource-manager": "~0.0.1",
+        "jdesrosiers/silex-jms-serializer-provider": "~0.1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",

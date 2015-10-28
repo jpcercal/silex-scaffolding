@@ -12,6 +12,7 @@ use Cekurte\ResourceManager\Query\QueryString;
 use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\ConstraintViolationList;
 
 class UserController extends AbstractController
@@ -43,7 +44,7 @@ class UserController extends AbstractController
     public function showAction(Request $request, $username)
     {
         $expr = new DoctrineQueryExpr();
-        $expr->eq('c.username', $username);
+        $expr->eq('u.username', $username);
 
         $resource = $this->getResourceManager()->findResource($expr);
 
@@ -66,10 +67,9 @@ class UserController extends AbstractController
         $resource->setUsername($data['username']);
         $resource->setSalt(md5($data['username'] . $data['password']));
 
-
         $encoderFactory = $this->getApp()['security.encoder_factory'];
         $encoder  = $encoderFactory->getEncoder($resource);
-        $password = $encoder->encodePassword($data['password'], $user->getSalt());
+        $password = $encoder->encodePassword($data['password'], $resource->getSalt());
 
         $resource->setPassword($password);
 
@@ -91,13 +91,13 @@ class UserController extends AbstractController
         }
 
         $expr = new DoctrineQueryExpr();
-        $expr->eq('c.username', $username);
+        $expr->eq('u.username', $username);
 
         $resource = $this->getResourceManager()->findResource($expr);
 
         $encoderFactory = $this->getApp()['security.encoder_factory'];
         $encoder  = $encoderFactory->getEncoder($resource);
-        $password = $encoder->encodePassword($data['password'], $user->getSalt());
+        $password = $encoder->encodePassword($data['password'], $resource->getSalt());
 
         $resource->setPassword($password);
 
@@ -111,7 +111,7 @@ class UserController extends AbstractController
     public function deleteAction(Request $request, $username)
     {
         $expr = new DoctrineQueryExpr();
-        $expr->eq('c.username', $username);
+        $expr->eq('u.username', $username);
 
         $resource = $this->getResourceManager()->findResource($expr);
 
